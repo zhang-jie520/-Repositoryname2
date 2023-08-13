@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ZbGzMapper">
+
+    <select id="selectAllByname" parameterType="java.lang.String" resultType="com.example.demo.entry.ZbGz">
+        select * from zbgz where 1=1 and zbgzname=#{newValue}
+    </select>
+    <select id="selectOneByObject" parameterType="com.example.demo.entry.ZbGz" resultType="com.example.demo.entry.ZbGz">
+        select * from zbgz where 1=1 and zbgzname=#{zbgzname} and zbgztype=#{zbgztype}
+    </select>
+
+    <insert id="save" parameterType="com.example.demo.entry.ZbGz">
+        insert into zbgz values(null ,#{zbgzname},#{zbgztype})
+    </insert>
+
+    <update id="update" parameterType="com.example.demo.entry.ZbGz">
+        update zbgz set zbgzname=#{zbgzname},zbgztype=#{zbgztype} where id=#{id}
+    </update>
+    <update id="updateAllByObject" parameterType="com.example.demo.entry.ZbGz">
+        update zbgz set zbgzname=#{zbgzname} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="com.example.demo.entry.ZbGz">
+        delete from zbgz where zbgzname=#{zbgzname} and zbgztype=#{zbgztype}
+    </delete>
+    <delete id="deleteAllByZb" parameterType="com.example.demo.entry.ZbGz">
+        delete from zbgz where zbgzname=#{zbgzname}
+    </delete>
+</mapper>

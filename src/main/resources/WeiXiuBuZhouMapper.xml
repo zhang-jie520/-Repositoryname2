@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WeiXiuBuZhouMapper">
+    <select id="selectAllByObject" parameterType="com.example.demo.entry.WeiXiuBuZhou" resultType="com.example.demo.entry.WeiXiuBuZhou">
+        select * from weixiubuzhou where 1=1 and zhuangbei=#{zhuangbei} and gztype=#{gztype}
+    </select>
+    <select id="selectOneByName" parameterType="com.example.demo.entry.WeiXiuBuZhou" resultType="com.example.demo.entry.WeiXiuBuZhou">
+        select * from weixiubuzhou where 1=1 and zhuangbei=#{zhuangbei} and gztype=#{gztype} and buzhou=#{buzhou}
+    </select>
+    <select id="selectAllByZb" parameterType="java.lang.String" resultType="com.example.demo.entry.WeiXiuBuZhou">
+        select * from weixiubuzhou where 1=1 and zhuangbei=#{username}
+    </select>
+
+    <insert id="save" parameterType="com.example.demo.entry.WeiXiuBuZhou">
+        insert into weixiubuzhou values(null ,#{zhuangbei},#{gztype},#{buzhou})
+    </insert>
+
+    <update id="update" parameterType="com.example.demo.entry.WeiXiuBuZhou">
+        update weixiubuzhou set zhuangbei=#{zhuangbei},gztype=#{gztype},buzhou=#{buzhou} where id=#{id}
+    </update>
+    <update id="updateAllByGz" parameterType="com.example.demo.entry.WeiXiuBuZhou">
+        update weixiubuzhou set zhuangbei=#{zhuangbei},gztype=#{gztype} where id=#{id}
+    </update>
+    <update id="updateAllByZb" parameterType="com.example.demo.entry.WeiXiuBuZhou">
+        update weixiubuzhou set zhuangbei=#{zhuangbei} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="com.example.demo.entry.WeiXiuBuZhou">
+        delete from weixiubuzhou where zhuangbei=#{zhuangbei} and gztype=#{gztype} and buzhou=#{buzhou}
+    </delete>
+    <delete id="deleteAllByGz" parameterType="com.example.demo.entry.WeiXiuBuZhou">
+        delete from weixiubuzhou where zhuangbei=#{zhuangbei} and gztype=#{gztype}
+    </delete>
+    <delete id="deleteAllByZb" parameterType="com.example.demo.entry.WeiXiuBuZhou">
+        delete from weixiubuzhou where zhuangbei=#{zhuangbei}
+    </delete>
+</mapper>

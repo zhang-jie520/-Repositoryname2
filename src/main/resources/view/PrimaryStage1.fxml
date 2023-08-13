@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane id="mainBorderPane" minHeight="300.0" minWidth="400.0" stylesheets="/css/PrimaryStage.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controller.PrimaryStageController1">
+   <center>
+        <GridPane prefHeight="535.0" prefWidth="616.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="109.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="204.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="283.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="339.0" minHeight="10.0" prefHeight="339.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="285.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="439.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="318.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="318.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="318.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+<!--                装备名称-->
+                <ListView fx:id="userList" prefHeight="335.0" prefWidth="104.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+<!--                            <String fx:value="xx"></String>-->
+                        </FXCollections>
+                    </items>
+                </ListView>
+<!--                故障类型-->
+                <ListView fx:id="gzList" prefHeight="200" prefWidth="200" GridPane.columnIndex="1">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                        </FXCollections>
+                    </items>
+                </ListView>
+<!--                拆装步骤-->
+                <ListView fx:id="bzList" prefHeight="200" prefWidth="200" GridPane.columnIndex="2">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <!--                            <String fx:value="xx"></String>-->
+                        </FXCollections>
+                    </items>
+                </ListView>
+<!--                显示-->
+                <TextField fx:id="updatezbField" GridPane.rowIndex="1" />
+                <TextField fx:id="updategzField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="updateczbzField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+<!--                装备增删改-->
+                <Button fx:id="saveBt" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#updatezbButtonClick" text="修改装备名称" GridPane.rowIndex="2" />
+                <Button fx:id="saveBt1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#deletezbButtonClick" text="删除装备" GridPane.rowIndex="3" />
+                <Button fx:id="saveBt2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#savezbButtonClick" text="添加装备" GridPane.rowIndex="4" />
+<!--                故障增删改-->
+                <Button fx:id="saveBt3" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#updategzButtonClick" text="修改故障类型" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button fx:id="saveBt11" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#deletegzButtonClick" text="删除故障类型" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Button fx:id="saveBt21" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#savegzButtonClick" text="添加故障类型" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+<!--                拆装步骤增删改-->
+                <Button fx:id="saveBt4" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#updateczbzButtonClick" text="修改维修步骤" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Button fx:id="saveBt12" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#deleteczbzButtonClick" text="删除维修步骤" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Button fx:id="saveBt22" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#saveczbzButtonClick" text="添加维修步骤" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+
+                <TextField fx:id="savezbField" GridPane.rowIndex="5" />
+                <TextField fx:id="savegzField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <TextField fx:id="saveczbzField" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Button fx:id="saveBt23" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#backButtonClick" text="返回首页" GridPane.rowIndex="6" />
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </GridPane>
+   </center>
+</BorderPane>
